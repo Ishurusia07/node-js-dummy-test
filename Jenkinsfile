@@ -1,19 +1,21 @@
 pipeline {
     environment {
-    env = 'dev'
-  }
+        env = 'dev'
+    }
     agent any
     options {
         skipStagesAfterUnstable()
     }
-        stage('NPM install') { 
-            steps { 
-                 "cd /home/ishu/test.com && npm install"
+    stages {
+        stage('NPM install') {
+            steps {
+                sh 'cd /home/ishu/test.com && npm install'
             }
         }
-        stage('Reload PM2') { 
-            steps { 
-                 "cd /home/ishu/test.com && pm2 reload 0"
+        stage('Reload PM2') {
+            steps {
+                sh 'cd /home/ishu/test.com && pm2 reload 0'
             }
-       }
-  }
+        }
+    }
+}
