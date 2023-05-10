@@ -9,12 +9,12 @@ pipeline {
     stages {
         stage('NPM install') {
             steps {
-               "cd /home/ishu/test.com && npm install"
+              sh 'ssh ishu@192.168.1.8 "cd /home/ishu/test.com && npm install"'
             }
         }
         stage('Reload PM2') {
             steps {
-               "cd /home/ishu/test.com && pm2 reload 0"
+             sh 'ssh ishu@192.168.1.8 "cd /home/ishu/test.com && pm2 reload 0"'
             }
         }
     }
