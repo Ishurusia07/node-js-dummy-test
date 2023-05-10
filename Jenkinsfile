@@ -9,12 +9,12 @@ pipeline {
     stages {
         stage('NPM install') {
             steps {
-                sh 'cd /home/ishu/test.com && sudo npm install'
+               'cd /home/ishu/test.com && sudo npm install'
             }
         }
         stage('Reload PM2') {
             steps {
-                sh 'cd /home/ishu/test.com && sudo pm2 reload 0'
+               'cd /home/ishu/test.com && sudo pm2 reload 0'
             }
         }
     }
