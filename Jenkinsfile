@@ -8,7 +8,7 @@ pipeline {
     }
         stage('NPM install') { 
             steps { 
-                 "cd cd /home/ishu/test.com && npm install"'
+                 "cd /home/ishu/test.com && npm install"'
             }
         }
         stage('Reload PM2') { 
